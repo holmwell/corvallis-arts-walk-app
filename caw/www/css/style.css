@@ -21,6 +21,11 @@ map {
 	text-align: center; 
 }
 
+/* inside map info window */
+#bodyContent p {
+	margin-top: 1em;
+}
+
 /* TODO: Figure out a full theme;
 body,
 .pane,

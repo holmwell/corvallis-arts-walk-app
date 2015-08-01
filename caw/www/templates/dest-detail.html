@@ -20,7 +20,6 @@
         </div>
 
         <h4>{{dest.address}}, {{dest.hours || "4-8 p.m."}}</h4>
-
         <pre>{{dest.description || dest.summary}}</pre>
 
 <!--         <div class="item item-image">
@@ -29,6 +28,6 @@
     </ion-content>
 
     <ion-footer-bar class="map-footer">
-      <map on-create="mapCreated(map)"></map>
+      <map on-create="mapCreated(map)" zoom="17"></map>
     </ion-footer-bar>
 </ion-view>

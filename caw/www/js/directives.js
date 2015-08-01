@@ -4,15 +4,20 @@ angular.module('starter.directives', [])
   return {
     restrict: 'E',
     scope: {
-      onCreate: '&'
+      onCreate: '&',
+      zoom: '='
     },
     link: function ($scope, $element, $attr) {
       function initialize() {
+
+        var zoom = $scope.zoom ? parseInt($scope.zoom) : 17;
+
         var mapOptions = {
           center: new google.maps.LatLng(44.564566, -123.262044), // Corvallis
-          zoom: 17,
+          zoom: zoom,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+
         var map = new google.maps.Map($element[0], mapOptions);
   
         $scope.onCreate({map: map});

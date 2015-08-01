@@ -32,7 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
@@ -58,16 +58,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           controller: 'ListCtrl'
         }
       }
-    })
-    .state('tab.dest-detail', {
-      url: '/destinations/:destinationId',
-      views: {
-        'tab-list': {
-          templateUrl: 'templates/dest-detail.html',
-          controller: 'DestDetailCtrl'
-        }
+  })
+
+  .state('tab.list-detail', {
+    url: '/destinations/:destinationId',
+    views: {
+      'tab-list': {
+        templateUrl: 'templates/dest-detail.html',
+        controller: 'DestDetailCtrl'
       }
-    })
+    }
+  })
   
   .state('tab.map', {
     url: '/map',
@@ -75,6 +76,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       'tab-map': {
         templateUrl: 'templates/tab-map.html',
         controller: 'MapCtrl'
+      }
+    }
+  })
+
+  .state('tab.map-detail', {
+    url: '/map/destinations/:destinationId',
+    views: {
+      'tab-map': {
+        templateUrl: 'templates/dest-detail.html',
+        controller: 'DestDetailCtrl'
       }
     }
   })

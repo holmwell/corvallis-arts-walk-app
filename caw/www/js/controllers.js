@@ -32,7 +32,7 @@ angular.module('starter.controllers', [])
   $scope.dest = Destinations.get($stateParams.destinationId);
   var destination = $scope.dest;
 
-  $scope.mapCreated = function(map) {
+  $scope.mapCreated = function (map) {
     $scope.map = map;
 
     // Center on the destination's position.
@@ -42,12 +42,10 @@ angular.module('starter.controllers', [])
 
     var marker = new google.maps.Marker({
       position: myLatlng,
-      map: map,
-//      animation: google.maps.Animation.DROP
+      map: map
     });
 
     map.setCenter(myLatlng);
-
   };
 
   $scope.centerOnMe = function () {
@@ -81,8 +79,54 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('MapCtrl', function ($scope) {
-  // Nothing, at the moment
+.controller('MapCtrl', function ($scope, Destinations) {
+  $scope.mapCreated = function(map) {
+    $scope.map = map;
+
+    var monroeAnd4th = new google.maps.LatLng(44.564639,-123.262014);
+
+    var destinations = Destinations.all();
+    var openWindow = undefined;
+
+    for (var id in destinations) {
+      var closure = function () {
+        var dest = destinations[id];
+
+        var position = new google.maps.LatLng(
+          dest.geocode.lat,
+          dest.geocode.lng);
+
+        var marker = new google.maps.Marker({
+          position: position,
+          map: map,
+          title: dest.name
+        });
+
+        var contentString = '<div id="content">'+
+        '<h4 id="firstHeading" class="firstHeading">' + dest.name + '</h4>'+
+        '<div id="bodyContent">'+
+        '<pre>' + dest.summary + '</pre>'+
+        '<p><a href="#/tab/map/destinations/' + dest.id + '">'+
+        'View details</a></p>'+
+        '</div>'+
+        '</div>';
+
+        var infoWindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          if (openWindow) {
+            openWindow.close();
+          }
+          infoWindow.open(map,marker);
+          openWindow = infoWindow;
+        });        
+      }(); // closure
+    }
+
+    map.setCenter(monroeAnd4th);
+  };
 })
 
 .controller('AccountCtrl', function($scope) {
