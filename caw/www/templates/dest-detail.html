@@ -1,30 +1,17 @@
 <!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
+  This template loads for the 'tab.dest-detail' state (app.js)
+  'dest' is a $scope variable created in the DestDetailCtrl controller (controllers.js)
+  The DetDetailCtrl pulls data from the Destinations service (service.js)
+  The Destinations service returns an array of destination data
 -->
 <ion-view view-title="{{dest.name}}">
-<!--   <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.summary}}
-    </p>
-  </ion-content>
- -->
     <ion-content class="content">
         <div class="row-dest-feature" ng-show="dest.photoUrl">
-<!--           <div class="col col-17">&nbsp;</div> -->
-            <img class="img-dest-feature" ng-src="{{dest.photoUrl}}"/>
-          </div>
+          <img class="img-dest-feature" ng-src="{{dest.photoUrl}}"/>
         </div>
 
         <h4>{{dest.address}}, {{dest.hours || "4-8 p.m."}}</h4>
         <pre>{{dest.description || dest.summary}}</pre>
-
-<!--         <div class="item item-image">
-        </div>
- -->        
     </ion-content>
 
     <ion-footer-bar class="map-footer">
