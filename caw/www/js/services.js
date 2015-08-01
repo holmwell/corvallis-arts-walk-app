@@ -14,7 +14,7 @@ angular.module('starter.services', [])
     },
     summary: "One of Shar Fagersten's most recent Portland showings offered text and photography depicting ridiculous advice she and her friends sometimes receive, another a photo series and ashes depicting her wedding dress as it burned as a reflection on the stages of her marriage and divorce.  Her work does not settle on being explicit, as one may suspect, she works instead to affect questions and conversations. Open 4 to 8 pm, refreshments as usual at the loft.",
     description: "One of Shar Fagersten's most recent Portland showings offered text and photography depicting ridiculous advice she and her friends sometimes receive, another a photo series and ashes depicting her wedding dress as it burned as a reflection on the stages of her marriage and divorce.  Her work does not settle on being explicit, as one may suspect, she works instead to affect questions and conversations. Open 4 to 8 pm, refreshments as usual at the loft.",
-    face: 'img/advocate.jpg'
+    photoUrl: 'img/advocate.jpg'
   }, {
     id: 1,
     name: 'Art in the Valley',
@@ -35,7 +35,7 @@ angular.module('starter.services', [])
     },
     summary: 'Jamie Walsh. \"Dots\".',
     description: "Jamie Walsh. \"Dots\".\n\nJamie Walsh is an artist, activist and program coordinator for OSLP's Arts and Culture Program in Eugene",
-    face: 'img/art-works.jpg'
+    photoUrl: 'img/art-works.jpg'
   }, {
     id: 'azure',
     name: 'Azure Fine Art Gallery',
@@ -73,7 +73,7 @@ angular.module('starter.services', [])
     },
     summary: 'Come see thought-provoking activist art promoting a more compassionate coexistence, browse through older work and Eco-Prints for sale!',
     description: "Come view over a decade of Brittney West's oil paintings and mixed-media drawings as well as view her recent activist artwork, exhibiting thought-provoking imagery intended to create a more compassionate coexistence. Enjoy snacks and wine in her ambient studio, pick at the artist's brain and snoop around. All are welcome!",
-    face: 'img/brittney-west.jpg'
+    photoUrl: 'img/brittney-west.jpg'
   }, {
     id: 'pegasus',
     name: 'Pegasus & Old World Deli',
@@ -84,7 +84,7 @@ angular.module('starter.services', [])
     },
     summary: 'A sampling of art from the 37 local artists who comprise the Philomath Open Studio Tour.  This exhibit includes Ceramics, Jewelry, Fiber, Glass, Painting, Photography, and Encaustics.  The artists reception during the walk is a rare opportunity to find the artists of POST in a single place at the same time.',
     description: "Held in October, the Philomath Open Studio Tour (POST) is an annual event where local artists open up their studio space and process to viewing by the public.  This exhibit offers an opportunity to see a sampling of art from all the artists on display in a single space allowing you to identify favorites and plan your tour of POST 2015.  Exhibited mediums include Ceramics, Jewelry, Fiber, Glass, Painting, Photography, and Encaustics.\n\nThe artists reception that will be held during the August CAW is a rare chance to find all these great artists together at once.  Prepare for an art party! ",
-    face: 'img/pegasus.jpg'
+    photoUrl: 'img/pegasus.jpg'
   },{
     id: 'studio262',
     name: 'Studio262',
@@ -95,7 +95,7 @@ angular.module('starter.services', [])
     },
     summary: 'Featured Artist Series: Ginny Gibson. Artist reception for beloved local clay artist, Ginny Gibson. Meet the artist to learn about her process and inspiration.',
     description: "Featured Artist Series: Ginny Gibson\n\nPlease join us for our artist reception for beloved local clay artist, Ginny Gibson. Highlighted in her most recent figurative and landscape pieces, Ginny brings a unique combination of depth and whimsy to her work. Meet Ginny and learn more about her process and inspiration while enjoying a tasty treat.",
-    face: 'img/studio262.jpg'
+    photoUrl: 'img/studio262.jpg'
   },{
     id: 'studio-beatrice',
     name: 'Studio Beatrice',
@@ -116,7 +116,7 @@ angular.module('starter.services', [])
     },
     summary: 'The Arts Center features SUBTEXT, An exploration of Language in the Visual Arts with Pat Boas, Marie Sivak and Robert Tomlinson. Come and play with letters, lettering, your initials or a short phrase in sumi ink and tempera paint.',
     description: "The Arts Center features SUBTEXT, An exploration of Language in the Visual Arts with Portland artists Pat Boas, Marie Sivak and Robert Tomlinson from Independence. They take letters, words, writing as a pictorial element in their work. Does the shape of the word influence the meaning?\n\nCome and play with letters, lettering, your initials or a short phrase in sumi ink and tempera paint. We’ll have ink and paint available for you to create card-size compositions of letter shapes in black and white or color. Simple, yet great for a small memento, a bit of creative time... ",
-    face: 'img/arts-center.jpg'
+    photoUrl: 'img/arts-center.jpg'
   }];
 
   return {
