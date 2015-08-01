@@ -81,6 +81,10 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('MapCtrl', function ($scope) {
+  // Nothing, at the moment
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
