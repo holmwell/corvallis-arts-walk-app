@@ -13,10 +13,13 @@ map {
 }
 
 
-.img-dest-feature {
+.img-dest-feature,
+.about-logo {
 	height: 100%;
 }
-.row-dest-feature {
+
+.row-dest-feature,
+.about-logo-container {
 	height: 30%;
 	text-align: center; 
 }
@@ -43,3 +46,12 @@ body,
 	padding: 0;
 	height: 20%;
 }
+
+/* About page */
+.about-content {
+	padding: 10px;
+}
+.about-text {
+	padding-top: 10px;
+}
+
