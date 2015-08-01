@@ -1,1 +1,40 @@
-/* Empty. Add your own CSS if you like */
+
+pre {
+	font-family: 'Helvetica Neue', Roboto, 'Segoe UI', sans-serif;
+}
+
+map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.scroll {
+  height: 100%;
+}
+
+
+.img-dest-feature {
+	height: 100%;
+}
+.row-dest-feature {
+	height: 30%;
+	text-align: center; 
+}
+
+/* TODO: Figure out a full theme;
+body,
+.pane,
+.item-content,
+.content {
+	background-color: rgb(228, 230, 231) !important;
+}
+*/ 
+
+.content {
+	padding: 10px;
+}
+
+.map-footer {
+	padding: 0;
+	height: 20%;
+}
