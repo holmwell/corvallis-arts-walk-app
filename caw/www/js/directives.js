@@ -6,19 +6,41 @@ angular.module('starter.directives', [])
     scope: {
       onCreate: '&',
       zoom: '=',
+      zoomControl: '=',
+      streetViewControl: '=',
+      mapTypeControl: '=',
       centerLat: '=',
       centerLng: '='
     },
     link: function ($scope, $element, $attr) {
+
       function initialize() {
 
         var zoom = $scope.zoom ? parseInt($scope.zoom) : 17;
         var centerLat = $scope.centerLat || 44.564566;
         var centerLng = $scope.centerLng || -123.262044; 
 
+        var zoomControl = true;
+        if (typeof $scope.zoomControl !== 'undefined') {
+          zoomControl = $scope.zoomControl;
+        }
+
+        var streetViewControl = true;
+        if (typeof $scope.streetViewControl !== 'undefined') {
+          streetViewControl = $scope.streetViewControl;
+        }
+
+        var mapTypeControl = true;
+        if (typeof $scope.mapTypeControl !== 'undefined') {
+          mapTypeControl = $scope.mapTypeControl;
+        }
+
         var mapOptions = {
           center: new google.maps.LatLng(centerLat, centerLng), 
           zoom: zoom,
+          zoomControl: zoomControl,
+          streetViewControl: streetViewControl,
+          mapTypeControl: mapTypeControl,
           mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'caw_map_style']
           }
