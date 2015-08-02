@@ -6,7 +6,7 @@
 -->
 <ion-view view-title="{{dest.name}}">
     <ion-content class="content">
-        <div class="row-dest-feature" ng-show="dest.photoUrl">
+        <div class="row-dest-feature ng-cloak" ng-if="dest.photoUrl">
           <img class="img-dest-feature" ng-src="{{dest.photoUrl}}"/>
         </div>
 
