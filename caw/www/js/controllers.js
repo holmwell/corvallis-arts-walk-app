@@ -117,6 +117,11 @@ angular.module('starter.controllers', [])
 
     // To help edit map styles:
     // http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html
+    //
+    // Used Paulo Avila's work as a starting point, but changed 
+    // pretty much everything a little bit.
+    // * https://snazzymaps.com/style/15/subtle-grayscale
+    // * Licensed under CC BY-SA 3.0
     var style = [
       {
         "featureType":"landscape", // blocks
