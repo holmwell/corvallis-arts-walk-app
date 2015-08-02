@@ -186,7 +186,7 @@ angular.module('starter.controllers', [])
 
       // Place a marker where we're at
       var myPosMarker = new google.maps.Marker({
-        clickable: true,
+        clickable: false,
         icon: starImage,
         shadow: null,
         zIndex: 999,
@@ -197,7 +197,8 @@ angular.module('starter.controllers', [])
 
       $ionicLoading.hide();
     }, function (error) {
-      alert('Unable to get location: ' + error.message);
+      // Don't care
+      console.log('Unable to get location: ' + error.message);
     });
   };
 
