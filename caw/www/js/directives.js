@@ -19,7 +19,9 @@ angular.module('starter.directives', [])
         var mapOptions = {
           center: new google.maps.LatLng(centerLat, centerLng), 
           zoom: zoom,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'caw_map_style']
+          }
         };
 
         var map = new google.maps.Map($element[0], mapOptions);

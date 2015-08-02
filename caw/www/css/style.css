@@ -55,3 +55,16 @@ body,
 	padding-top: 10px;
 }
 
+/* Map page */
+.map-content .bar-footer {
+	text-align: center !important;
+	padding: 0;
+	padding-left: 10px;
+}
+.map-content .bar-footer h4 {
+	color: #555 !important;
+}
+.map-content .bar-footer h4 i {
+	color: black !important;
+}
+
