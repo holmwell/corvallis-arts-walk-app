@@ -80,10 +80,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('MapCtrl', function ($scope, Destinations) {
+  $scope.monroeAnd4th = new google.maps.LatLng(44.564639,-123.262014);
+
   $scope.mapCreated = function(map) {
     $scope.map = map;
-
-    var monroeAnd4th = new google.maps.LatLng(44.564639,-123.262014);
 
     var destinations = Destinations.all();
     var openWindow = undefined;
@@ -124,8 +124,6 @@ angular.module('starter.controllers', [])
         });        
       }(); // closure
     }
-
-    map.setCenter(monroeAnd4th);
   };
 })
 

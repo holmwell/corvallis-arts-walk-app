@@ -1,5 +1,8 @@
 <ion-view view-title="Corvallis Arts Walk Map">
   <ion-content>
-    <map on-create="mapCreated(map)" zoom="15"></map>
+    <map on-create="mapCreated(map)" 
+      center-lat="monroeAnd4th.lat()" 
+      center-lng="monroeAnd4th.lng()" 
+      zoom="15"></map>
   </ion-content>
 </ion-view>

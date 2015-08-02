@@ -5,15 +5,19 @@ angular.module('starter.directives', [])
     restrict: 'E',
     scope: {
       onCreate: '&',
-      zoom: '='
+      zoom: '=',
+      centerLat: '=',
+      centerLng: '='
     },
     link: function ($scope, $element, $attr) {
       function initialize() {
 
         var zoom = $scope.zoom ? parseInt($scope.zoom) : 17;
+        var centerLat = $scope.centerLat || 44.564566;
+        var centerLng = $scope.centerLng || -123.262044; 
 
         var mapOptions = {
-          center: new google.maps.LatLng(44.564566, -123.262044), // Corvallis
+          center: new google.maps.LatLng(centerLat, centerLng), 
           zoom: zoom,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
