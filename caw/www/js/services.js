@@ -9,8 +9,8 @@ angular.module('starter.services', [])
     name: 'The Corvallis Advocate Loft',
     address: '425 SW Madison Ave (upstairs)',
     geocode: {
-      lat: 44.564016,
-      lng: -123.2626192
+      lat: 44.563871, 
+      lng: -123.262889
     },
     summary: "One of Shar Fagersten's most recent Portland showings offered text and photography depicting ridiculous advice she and her friends sometimes receive, another a photo series and ashes depicting her wedding dress as it burned as a reflection on the stages of her marriage and divorce.  Her work does not settle on being explicit, as one may suspect, she works instead to affect questions and conversations. Open 4 to 8 pm, refreshments as usual at the loft.",
     description: "One of Shar Fagersten's most recent Portland showings offered text and photography depicting ridiculous advice she and her friends sometimes receive, another a photo series and ashes depicting her wedding dress as it burned as a reflection on the stages of her marriage and divorce.  Her work does not settle on being explicit, as one may suspect, she works instead to affect questions and conversations. Open 4 to 8 pm, refreshments as usual at the loft.",
@@ -30,8 +30,8 @@ angular.module('starter.services', [])
     name: 'ArtWorks (CEI) Gallery',
     address: '408 SW Monroe Ave Suite 110',
     geocode: {
-      lat: 44.5637819,
-      lng: -123.2630315
+      lat: 44.564372, 
+      lng: -123.262252
     },
     summary: 'Jamie Walsh. \"Dots\".',
     description: "Jamie Walsh. \"Dots\".\n\nJamie Walsh is an artist, activist and program coordinator for OSLP's Arts and Culture Program in Eugene",
@@ -41,8 +41,8 @@ angular.module('starter.services', [])
     name: 'Azure Fine Art Gallery',
     address: '341 SW 2nd St',
     geocode: {
-      lat: 44.5612532,
-      lng: -123.26097
+      lat: 44.561371, 
+      lng: -123.261053
     },
     summary: 'When it rains, Pam Serra-Wenz finds a way to appreciate it with her Oregon Rain Paintings. Each piece has several rains and can take up to three days to dry in between.  Come see them hung away from the wall and see how the natural light reveals their transparency.'
   }, {
@@ -50,8 +50,8 @@ angular.module('starter.services', [])
     name: 'Kaleidoscope Studios',
     address: '341 SW 2nd St, Suite 2',
     geocode: {
-      lat: 44.5612532,
-      lng: -123.26097
+      lat: 44.561258, 
+      lng: -123.261147
     },
     summary: 'For August, we continue our show of vibrant geometrical art by Jeremy Smith & geometrical jewelry. Plus we will have a FREE beading project & a drawing for fun art prizes!',
   }, {
@@ -59,8 +59,8 @@ angular.module('starter.services', [])
     name: 'Cyrano\'s',
     address: '361 SW 2nd St', 
     geocode: {
-      lat: 44.5612576,
-      lng: -123.2613005
+      lat: 44.561122, 
+      lng: -123.260822
     },
     summary: 'Susan Stogsdill has been revisiting the past with childhood books, turning them into journals.  Come see if your favorite book might be among the stacks!',
   }, {
@@ -68,8 +68,8 @@ angular.module('starter.services', [])
     name: 'Brittney West',
     address: '340 SW 2nd St., Studio #3 (Above Corvallis Cyclery)',
     geocode: {
-      lat: 44.5614003,
-      lng: -123.2616742
+      lat: 44.561378, 
+      lng: -123.261429
     },
     summary: 'Come see thought-provoking activist art promoting a more compassionate coexistence, browse through older work and Eco-Prints for sale!',
     description: "Come view over a decade of Brittney West's oil paintings and mixed-media drawings as well as view her recent activist artwork, exhibiting thought-provoking imagery intended to create a more compassionate coexistence. Enjoy snacks and wine in her ambient studio, pick at the artist's brain and snoop around. All are welcome!",
@@ -79,8 +79,8 @@ angular.module('starter.services', [])
     name: 'Pegasus & Old World Deli',
     address: '341 SW 2nd St',
     geocode: {
-      lat: 44.5612532,
-      lng: -123.26097
+      lat: 44.561185, // pegasus
+      lng: -123.261147
     },
     summary: 'A sampling of art from the 37 local artists who comprise the Philomath Open Studio Tour.  This exhibit includes Ceramics, Jewelry, Fiber, Glass, Painting, Photography, and Encaustics.  The artists reception during the walk is a rare opportunity to find the artists of POST in a single place at the same time.',
     description: "Held in October, the Philomath Open Studio Tour (POST) is an annual event where local artists open up their studio space and process to viewing by the public.  This exhibit offers an opportunity to see a sampling of art from all the artists on display in a single space allowing you to identify favorites and plan your tour of POST 2015.  Exhibited mediums include Ceramics, Jewelry, Fiber, Glass, Painting, Photography, and Encaustics.\n\nThe artists reception that will be held during the August CAW is a rare chance to find all these great artists together at once.  Prepare for an art party! ",
@@ -90,8 +90,8 @@ angular.module('starter.services', [])
     name: 'Studio262',
     address: '425 SW Madison Ave, Suite H-1',
     geocode: {
-      lat: 44.564016,
-      lng: -123.2626192
+      lat: 44.563996, 
+      lng: -123.262440
     },
     summary: 'Featured Artist Series: Ginny Gibson. Artist reception for beloved local clay artist, Ginny Gibson. Meet the artist to learn about her process and inspiration.',
     description: "Featured Artist Series: Ginny Gibson\n\nPlease join us for our artist reception for beloved local clay artist, Ginny Gibson. Highlighted in her most recent figurative and landscape pieces, Ginny brings a unique combination of depth and whimsy to her work. Meet Ginny and learn more about her process and inspiration while enjoying a tasty treat.",
