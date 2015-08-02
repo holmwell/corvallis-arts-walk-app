@@ -68,3 +68,28 @@ body,
 	color: black !important;
 }
 
+/* Ionic style overrides */
+.scroll-content {
+	/* slightly darker than main content */
+	background-color: #d4d6d7 !important;
+}
+.item,
+.item-content,
+.about-content,
+.detail-content {
+	background-color: #e4e6e7 !important;
+}
+.tabs,
+.bar-stable {
+	/* slightly lighter than main content */
+	background-color: #ebedee !important;	
+}
+.tab-item-active .icon, .tab-item-active .tab-title {
+	color: #851c29;
+}
+.item {
+	border-color: #851c29;
+}
+
+
+
