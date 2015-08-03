@@ -49,68 +49,74 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('MapCtrl', function ($scope, Destinations, $ionicLoading) {
-  $scope.monroeAnd4th = new google.maps.LatLng(44.564639,-123.262014);
+.controller('MapCtrl', function ($scope, Destinations, $ionicLoading, googleMaps) {  
+  googleMaps.mapsInitialized.then(function () {
+    loadController();
+  });
 
-  $scope.mapCreated = function(map) {
-    $scope.map = map;
+  function loadController() {
+    $scope.monroeAnd4th = new google.maps.LatLng(44.564639,-123.262014);
 
-    var destinations = Destinations.all();
-    var openWindow = undefined;
+    $scope.mapCreated = function(map) {
+      $scope.map = map;
 
-    for (var id in destinations) {
-      var closure = function () {
-        var dest = destinations[id];
+      var destinations = Destinations.all();
+      var openWindow = undefined;
 
-        var position = new google.maps.LatLng(
-          dest.geocode.lat,
-          dest.geocode.lng);
+      for (var id in destinations) {
+        var closure = function () {
+          var dest = destinations[id];
 
-        // Origins, anchor positions and coordinates of the marker
-        // increase in the X direction to the right and in
-        // the Y direction down.
-        var starImage = {
-          url: 'img/ionic/ios7-star-outline-red-small.png',
-          // This marker is 32 pixels square.
-          size: new google.maps.Size(32, 32),
-          // The origin for this image is 0,0.
-          origin: new google.maps.Point(0,0),
-          // The anchor for this image is the center of the star.
-          anchor: new google.maps.Point(16, 16)
-        };
+          var position = new google.maps.LatLng(
+            dest.geocode.lat,
+            dest.geocode.lng);
 
-        var marker = new google.maps.Marker({
-          position: position,
-          map: map,
-          title: dest.name,
-          icon: starImage
-        });
+          // Origins, anchor positions and coordinates of the marker
+          // increase in the X direction to the right and in
+          // the Y direction down.
+          var starImage = {
+            url: 'img/ionic/ios7-star-outline-red-small.png',
+            // This marker is 32 pixels square.
+            size: new google.maps.Size(32, 32),
+            // The origin for this image is 0,0.
+            origin: new google.maps.Point(0,0),
+            // The anchor for this image is the center of the star.
+            anchor: new google.maps.Point(16, 16)
+          };
 
-        var contentString = '<div id="content">'+
-        '<h4 id="firstHeading" class="firstHeading">' + dest.name + '</h4>'+
-        '<div id="bodyContent">'+
-        '<pre>' + dest.summary + '</pre>'+
-        '<p><a href="#/tab/map/destinations/' + dest.id + '">'+
-        'View details</a></p>'+
-        '</div>'+
-        '</div>';
+          var marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: dest.name,
+            icon: starImage
+          });
 
-        var infoWindow = new google.maps.InfoWindow({
-          content: contentString
-        });
+          var contentString = '<div id="content">'+
+          '<h4 id="firstHeading" class="firstHeading">' + dest.name + '</h4>'+
+          '<div id="bodyContent">'+
+          '<pre>' + dest.summary + '</pre>'+
+          '<p><a href="#/tab/map/destinations/' + dest.id + '">'+
+          'View details</a></p>'+
+          '</div>'+
+          '</div>';
 
-        google.maps.event.addListener(marker, 'click', function() {
-          if (openWindow) {
-            openWindow.close();
-          }
-          infoWindow.open(map,marker);
-          openWindow = infoWindow;
-        });        
-      }(); // closure
+          var infoWindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+
+          google.maps.event.addListener(marker, 'click', function() {
+            if (openWindow) {
+              openWindow.close();
+            }
+            infoWindow.open(map,marker);
+            openWindow = infoWindow;
+          });        
+        }(); // closure
+      }
+
+      styleMap($scope.map);
+      showMyPosition($scope.map);
     }
-
-    styleMap($scope.map);
-    showMyPosition($scope.map);
   };
 
   function styleMap(map) {

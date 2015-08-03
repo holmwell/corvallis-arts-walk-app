@@ -1,6 +1,6 @@
 angular.module('starter.directives', [])
 
-.directive('map', function() {
+.directive('map', function (googleMaps) {
   return {
     restrict: 'E',
     scope: {
@@ -57,11 +57,13 @@ angular.module('starter.directives', [])
         });
       }
 
-      if (document.readyState === "complete") {
-        initialize();
-      } else {
-        google.maps.event.addDomListener(window, 'load', initialize);
-      }
+      googleMaps.mapsInitialized.then(function () {
+        if (document.readyState === "complete") {
+          initialize();
+        } else {
+          google.maps.event.addDomListener(window, 'load', initialize);
+        }
+      });
     }
   }
 });
