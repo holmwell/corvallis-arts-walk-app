@@ -28,8 +28,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 .factory('googleMaps', function googleMapsFactory ($window, $q, $http) {
 
     //Google's url for async maps initialization accepting callback function
-    var asyncUrl = 'https://maps.googleapis.com/maps/api/js?sensor=true&callback=',
-        mapsDefer = $q.defer();
+    var asyncUrl = 'https://maps.googleapis.com/maps/api/js?' +
+      'sensor=true' +
+      '&callback=googleMapsInitialized';
+
+    var mapsDefer = $q.defer();
 
     //Callback function - resolving promise after maps successfully loaded
     $window.googleMapsInitialized = mapsDefer.resolve; // removed ()
@@ -37,20 +40,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 
     //Async loader
-    var asyncLoad = function(asyncUrl, callbackName) {
+    var asyncLoad = function (scriptUrl) {
       var script = document.createElement('script');
       //script.type = 'text/javascript';
-      script.src = asyncUrl + callbackName;
+      script.src = scriptUrl;
       document.body.appendChild(script);
     };
 
     $http.get('config/keys.json')
     .success(function (data) {
       var apiKey = data.GoogleMapsApiKey;
-      // ...
+
+      if (apiKey) {
+        asyncUrl += '&key=' + apiKey;
+      }
+      else {
+        console.log("No Google Maps API key found. Using free tier.")
+      }
 
       //Start loading google maps
-      asyncLoad(asyncUrl, 'googleMapsInitialized');
+      asyncLoad(asyncUrl);
     });
 
     //Usage: googleMaps.mapsInitialized.then(callback)
