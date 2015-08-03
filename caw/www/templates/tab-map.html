@@ -1,15 +1,14 @@
 <ion-view view-title="Corvallis Arts Walk Map">
-  <ion-content class="map-content">
+  <ion-content class="map-content has-footer">
     <map on-create="mapCreated(map)" 
       center-lat="monroeAnd4th.lat()" 
       center-lng="monroeAnd4th.lng()" 
       zoom="15"
-      data-tap-disabled="true"></map>
-
-    <div class="bar bar-footer bar-stable">
+      data-tap-disabled="true"></map>  
+  </ion-content>
+  <ion-footer-bar class="bar-stable">
       <div class="row">
         <h4 class="title"><i class="icon ion-ios-star"></i> You are here</h4>
       </div>
-    </div>
-  </ion-content>
+  </ion-footer-bar>
 </ion-view>
