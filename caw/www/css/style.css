@@ -84,9 +84,16 @@ body,
 	/* slightly lighter than main content */
 	background-color: #ebedee !important;	
 }
-.tab-item-active .icon, .tab-item-active .tab-title {
+.tab-item-active .icon, 
+.tab-item-active .tab-title,
+.tab-item.activated {
 	color: #851c29;
 }
+a.tab-item.activated {
+	/* couldn't figure out how to not use important */
+	color: #851c29 !important;
+}
+
 .item {
 	border-color: #851c29;
 }
