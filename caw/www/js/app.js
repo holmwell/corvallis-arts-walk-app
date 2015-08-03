@@ -25,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 // From: http://codereview.stackexchange.com/questions/59678/simple-async-google-maps-initializer-with-angularjs
 // Google async initializer needs global function, so we use $window
-.factory('googleMaps', function googleMapsFactory ($window, $q) {
+.factory('googleMaps', function googleMapsFactory ($window, $q, $http) {
 
     //Google's url for async maps initialization accepting callback function
     var asyncUrl = 'https://maps.googleapis.com/maps/api/js?sensor=true&callback=',
@@ -34,6 +34,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     //Callback function - resolving promise after maps successfully loaded
     $window.googleMapsInitialized = mapsDefer.resolve; // removed ()
 
+
+
     //Async loader
     var asyncLoad = function(asyncUrl, callbackName) {
       var script = document.createElement('script');
@@ -41,10 +43,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       script.src = asyncUrl + callbackName;
       document.body.appendChild(script);
     };
-    //Start loading google maps
-    asyncLoad(asyncUrl, 'googleMapsInitialized');
 
-    //Usage: Initializer.mapsInitialized.then(callback)
+    $http.get('config/keys.json')
+    .success(function (data) {
+      var apiKey = data.GoogleMapsApiKey;
+      // ...
+
+      //Start loading google maps
+      asyncLoad(asyncUrl, 'googleMapsInitialized');
+    });
+
+    //Usage: googleMaps.mapsInitialized.then(callback)
     return {
         mapsInitialized : mapsDefer.promise
     };
