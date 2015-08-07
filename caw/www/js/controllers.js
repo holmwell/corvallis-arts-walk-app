@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('MapCtrl', function ($scope, Destinations, $ionicLoading, googleMaps) {  
+.controller('MapCtrl', function ($scope, Destinations, googleMaps, Location) {  
   googleMaps.mapsInitialized.then(function () {
     loadController();
   });
@@ -115,7 +115,20 @@ angular.module('starter.controllers', [])
       }
 
       styleMap($scope.map);
-      showMyPosition($scope.map);
+
+      var showLocation = function () {
+        Location.setScope($scope);
+        Location.startShowing($scope.map);
+      };
+
+      showLocation();
+
+        // This doesn't fire the first view
+      $scope.$on('$ionicView.enter', showLocation); 
+      
+      $scope.$on('$ionicView.leave', function(){
+        Location.stopShowing();
+      });
     }
   };
 
@@ -168,46 +181,6 @@ angular.module('starter.controllers', [])
     map.mapTypes.set('caw_map_style', styledMap);
     map.setMapTypeId('caw_map_style');
   }
-
-  function showMyPosition (map) {
-
-    $scope.loading = $ionicLoading.show({
-      content: 'Getting current location...',
-      showBackdrop: false
-    });
-
-    navigator.geolocation.getCurrentPosition(function (pos) {
-      console.log('Got pos', pos);
-      var myPosition = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude); 
-      
-      var starImage = {
-        url: 'img/ionic/ios7-star-small.png',
-        // This marker is 32 pixels square.
-        size: new google.maps.Size(32, 32),
-        // The origin for this image is 0,0.
-        origin: new google.maps.Point(0,0),
-        // The anchor for this image is the center of the star.
-        anchor: new google.maps.Point(16, 16)
-      };
-
-      // Place a marker where we're at
-      var myPosMarker = new google.maps.Marker({
-        clickable: false,
-        icon: starImage,
-        shadow: null,
-        zIndex: 999,
-        title: "You are here",
-        map: map,
-        position: myPosition
-      });
-
-      $ionicLoading.hide();
-    }, function (error) {
-      // Don't care
-      console.log('Unable to get location: ' + error.message);
-    });
-  };
-
 })
 
 .controller('AboutCtrl', function ($scope) {
