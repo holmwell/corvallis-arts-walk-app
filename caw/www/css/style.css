@@ -94,7 +94,8 @@ body,
 }
 .tab-item-active .icon, 
 .tab-item-active .tab-title,
-.tab-item.activated {
+.tab-item.activated,
+.about-sponsors a {
 	color: #851c29;
 }
 a.tab-item.activated {
@@ -104,6 +105,13 @@ a.tab-item.activated {
 
 .item {
 	border-color: #851c29;
+}
+
+.about-sponsors {
+	text-align: center;
+}
+.sponsor-img {
+	width: 50%;
 }
 
 
