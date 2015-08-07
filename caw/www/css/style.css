@@ -46,6 +46,14 @@ body,
 	padding: 0;
 	height: 20%;
 }
+.detail-content {
+/*	bottom: 300px !important;*/
+}
+
+.hack-for-ionic-scroll {
+	color: transparent;
+}
+
 
 /* About page */
 .about-content {
