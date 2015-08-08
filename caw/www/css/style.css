@@ -44,10 +44,17 @@ body,
 
 .map-footer {
 	padding: 0;
+	height: 130px;
+}
+.platform-ios .detail-content {
+	bottom: 180px; /* map height + tabs */
+}
+
+.platform-android .map-footer {
 	height: 20%;
 }
-.detail-content {
-/*	bottom: 300px !important;*/
+.platform-android .detail-content {
+	bottom: 20%;
 }
 
 .hack-for-ionic-scroll {
