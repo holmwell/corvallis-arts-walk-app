@@ -54,6 +54,9 @@ angular.module('starter.services', [])
     }, function (error) {
       // Don't care
       console.log('Unable to get location: ' + error.message);
+      if (showLoading) {
+        $ionicLoading.hide();
+      }
     });
   };  
 
