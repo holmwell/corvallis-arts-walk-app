@@ -97,8 +97,8 @@ angular.module('starter.services', [])
       lat: 44.563871, 
       lng: -123.262889
     },
-    summary: "One of Shar Fagersten's most recent Portland showings offered text and photography depicting ridiculous advice she and her friends sometimes receive, another a photo series and ashes depicting her wedding dress as it burned as a reflection on the stages of her marriage and divorce.  Her work does not settle on being explicit, as one may suspect, she works instead to affect questions and conversations. Open 4 to 8 pm, refreshments as usual at the loft.",
-    description: "One of Shar Fagersten's most recent Portland showings offered text and photography depicting ridiculous advice she and her friends sometimes receive, another a photo series and ashes depicting her wedding dress as it burned as a reflection on the stages of her marriage and divorce.  Her work does not settle on being explicit, as one may suspect, she works instead to affect questions and conversations. Open 4 to 8 pm, refreshments as usual at the loft.",
+    summary: "Group show.  Installation and photography from Shar Fagersten, surrealist Cyrus Peery, mathematic art from Jeremy Smith, pop works from Tim Blackburn, metallurgic pieces from Tony Fisher, and more. Treats too.",
+    description: "Ranging from an examination of marriage and society to surrealism and pop, this group show brings together many walks of life and, mixed material.  Installation and photography from Shar Fagersten,  surrealist painting and sculpture by Cyrus Peery, mathematic flat pieces and origami from Jeremy Smith, urban pop stencil and spray paint by Tim Blackburn, metallurgic landscape pieces from Tony Fisher, and more. Treats too.",
     photoUrl: 'img/advocate.jpg'
   }, {
     id: 1,
@@ -108,8 +108,8 @@ angular.module('starter.services', [])
       lat: 44.5628093,
       lng: -123.2603014
     },
-    summary: '\"Illustrated Clay\" by Marcella Henkels, guest artist. Featuring vivid pictorial raku clay tiles framed in barn wood.  Refreshments. 4-8 PM',
-    description: "Art in the Valley is the oldest co-operative artist owned gallery in Corvallis. From time to time we feature an outside guest artist.\n\nThis month, Marcella Henkels will be featured as a guest artist, showing her juicy raku ceramic tiles framed in rustic barn wood.\n\nThere is also a selection of 2D and 3D work, which changes monthly. Refreshments will be served. 4-8 PM",
+    summary: '“Paint Out” by Cherrill Boissinou at Art in the Valley @ 209 SW 2nd St. features acrylic and pastel paintings.  Refreshments and surprises abound.',
+    description: "\“Paint Out\” by Cherrill Boissonou is featured at Art in the Valley @ 209 SW 2nd St. during September.  Cherrill combines traveling with painting.  She is known for her pastels and acrylics. Her landscapes, which she renders on site, and animals that she creates using photos for reference, make a diverse and exciting show.  Refreshments will be served from 4-8 PM.",
   }, {
     id: 2,
     name: 'ArtWorks (CEI) Gallery',
@@ -118,8 +118,8 @@ angular.module('starter.services', [])
       lat: 44.564372, 
       lng: -123.262252
     },
-    summary: 'Jamie Walsh. \"Dots\".',
-    description: "Jamie Walsh. \"Dots\".\n\nJamie Walsh is an artist, activist and program coordinator for OSLP's Arts and Culture Program in Eugene",
+    summary: 'colors made in heaven. Roxanna Hendricks. mixed media works',
+    description: "colors made in heaven. Roxanna Hendricks. mixed media works. 541-224-6503, ceiworks.org",
     photoUrl: 'img/art-works.jpg'
   }, {
     id: 'azure',
@@ -129,7 +129,8 @@ angular.module('starter.services', [])
       lat: 44.561371, 
       lng: -123.261053
     },
-    summary: 'When it rains, Pam Serra-Wenz finds a way to appreciate it with her Oregon Rain Paintings. Each piece has several rains and can take up to three days to dry in between.  Come see them hung away from the wall and see how the natural light reveals their transparency.'
+    summary: 'Join us in September and explore the boundless exploration of the universe with Stacy Spangler\’s collage, where dreams find their way into the waking world.  Then follow us into the ocean depths in Rinee Merritt\’s glass coral in the birdcage.',
+    photoUrl: 'img/azure.jpg'
   }, {
     id: 3,
     name: 'Kaleidoscope Studios',
@@ -138,7 +139,9 @@ angular.module('starter.services', [])
       lat: 44.561258, 
       lng: -123.261147
     },
-    summary: 'For August, we continue our show of vibrant geometrical art by Jeremy Smith & geometrical jewelry. Plus we will have a FREE beading project & a drawing for fun art prizes!',
+    summary: 'Copper Autumn. Copper is our September focus and our featured jewelry artist is Jeanmarie Denning of Blessing Stones. Her Fall designs incorporate stone & organic elements.',
+    description: 'Copper Autumn\n\nWe are ready for Autumn!  For the September Art Walk and beyond, we will highlight warm, earthy copper and jewelry in Autumn organic colors.  Our featured local jewelry artist is Jeanmarie Denning of Blessing Stones. Her Fall designs incorporate stone and organic elements, often complemented with copper or antique brass.\n\nFall favorite snacks, *free* bracelet project and a copper component sale round out the evening!',
+    photoUrl: 'img/kaleidoscope.jpg' 
   }, {
     id: 4,
     name: 'Cyrano\'s',
@@ -167,8 +170,7 @@ angular.module('starter.services', [])
       lat: 44.561185, // pegasus
       lng: -123.261147
     },
-    summary: 'A sampling of art from the 37 local artists who comprise the Philomath Open Studio Tour.  This exhibit includes Ceramics, Jewelry, Fiber, Glass, Painting, Photography, and Encaustics.  The artists reception during the walk is a rare opportunity to find the artists of POST in a single place at the same time.',
-    description: "Held in October, the Philomath Open Studio Tour (POST) is an annual event where local artists open up their studio space and process to viewing by the public.  This exhibit offers an opportunity to see a sampling of art from all the artists on display in a single space allowing you to identify favorites and plan your tour of POST 2015.  Exhibited mediums include Ceramics, Jewelry, Fiber, Glass, Painting, Photography, and Encaustics.\n\nThe artists reception that will be held during the August CAW is a rare chance to find all these great artists together at once.  Prepare for an art party! ",
+    summary: '\"Safe Places to Fall\" will host paintings of Willamette Valley by artists Margret Hay and William Shumway and several other local image makers.\n\nMixed media pieces by artists Jim Noel, Bill Shumway and Jennifer Bennett will be on display along with metal sculptures by Raymond Hunter',
     photoUrl: 'img/pegasus.jpg'
   },{
     id: 'studio262',
@@ -178,8 +180,8 @@ angular.module('starter.services', [])
       lat: 44.563996, 
       lng: -123.262440
     },
-    summary: 'Featured Artist Series: Ginny Gibson. Artist reception for beloved local clay artist, Ginny Gibson. Meet the artist to learn about her process and inspiration.',
-    description: "Featured Artist Series: Ginny Gibson\n\nPlease join us for our artist reception for beloved local clay artist, Ginny Gibson. Highlighted in her most recent figurative and landscape pieces, Ginny brings a unique combination of depth and whimsy to her work. Meet Ginny and learn more about her process and inspiration while enjoying a tasty treat.",
+    summary: 'Jennifer Lommers & Carrie Tasman unveil their new Collaborative Paintings. Artists reception, 4-8pm. Meet the artists and see this exciting new project. ',
+    description: "Botanical Abstracts: Collaborative Works by Carrie Tasman & Jennifer Lommers\n\nPlease join us for our artist reception, 4-8pm, where Carrie & Jennifer will unveil their latest project, creating paintings together. Enjoy their attention to color and design as their styles overlap in new and exciting ways.",
     photoUrl: 'img/studio262.jpg'
   },{
     id: 'studio-beatrice',
@@ -189,8 +191,8 @@ angular.module('starter.services', [])
       lat: 44.566827,
       lng: -123.263545
     },
-    summary: 'Guest artist Russell McCrackin shows his art from across the USA, east coast to west.  Enjoy the reception with complimentary music and refreshments.  4-8 PM',
-    description: "Russell McCrackin is featured artist for the month of August.  He is a physics professor emeritus who has also enjoyed working as a blacksmith, hiking, camping, and traveling. He spent 11 winters in Arizona, painting en plein air. He enjoys using a limited palette when he works outdoors in oil. He is presenting scenes from New England, the Northwest and the Southwest.\n\nRefreshments and music will add to the fun.  4-8PM "
+    summary: 'Studio Beatrice hosts “Injeanious Silks” hand painted silk wall hangings and scarves by Jean Lawrence.  Refreshments, Music.',
+    description: "\“Injeanious Silks\”, the September feature show at Studio Beatrice features Jean Lawrence presenting arange of hand painted silk wall hangings and scarves.  Vibrant colors and diverse motifs embellish precious silk fabric.  Refreshments and guitar music by Marshall Adams and add to the festivities at 230 NW 6th Street from 4-8 PM. "
   },{
     id: 'arts-center',
     name: 'The Arts Center',
@@ -199,9 +201,30 @@ angular.module('starter.services', [])
       lat: 44.5643109,
       lng: -123.266023
     },
-    summary: 'The Arts Center features SUBTEXT, An exploration of Language in the Visual Arts with Pat Boas, Marie Sivak and Robert Tomlinson. Come and play with letters, lettering, your initials or a short phrase in sumi ink and tempera paint.',
-    description: "The Arts Center features SUBTEXT, An exploration of Language in the Visual Arts with Portland artists Pat Boas, Marie Sivak and Robert Tomlinson from Independence. They take letters, words, writing as a pictorial element in their work. Does the shape of the word influence the meaning?\n\nCome and play with letters, lettering, your initials or a short phrase in sumi ink and tempera paint. We’ll have ink and paint available for you to create card-size compositions of letter shapes in black and white or color. Simple, yet great for a small memento, a bit of creative time... ",
-    photoUrl: 'img/arts-center.jpg'
+    summary: 'The Arts Center features Contemporary Art Quilts by Bonnie Bucknam and Linda McLaughlin, as part of Quilt County.',
+    description: "The Arts Center features Contemporary Art Quilts by Bonnie Bucknam and Linda McLaughlin, as part of Quilt County.\n\nBucknam’s quilts are abstract interpretation of landscape and trees; McLaughlin concentrates in the meditative power of the circle."
+  }, {
+    id: 'majestic',
+    name: 'Majestic Theatre',
+    address: '115 SW 2nd St',
+    hours: '4-7 p.m.',
+    geocode: {
+      lat: 44.563638, 
+      lng: -123.259978
+    },
+    summary: "LOLZ: Instances of Humor in Art, a themed community art show! LOLZ celebrates the relationship of comedy and creativity – highlighting how local artists incorporate humor in visual art.",
+    description: "LOLZ: Instances of Humor in Art is the first of a series of themed community art shows slated for the Majestic Theatre in the coming year. Our objective is to celebrate and explore the relationship when comic meets creativity, and highlight the unique viewpoints of our local artists and how they choose to incorporate humor in visual art. Whether it’s exuberant, smile-inducing slapstick comic strips or bold and snarky insults shouted by Shakespeare’s tragic heroes, there’s no question of the importance of the presence of comedy in art throughout the ages, reminding us of the absurdity of sanity and that if all else fails, laughter is the best medicine.",
+    photoUrl: 'img/majestic.jpg'
+  }, {
+    id: 'fairbanks',
+    name: 'Fairbanks Art Gallery',
+    address: '220 SW 26th St',
+    hours: '4-7 p.m.',
+    geocode: {
+      lat: 44.5648582,
+      lng: -123.2804139
+    },
+    summary: "This exhibit has a broad diversity of approaches to the making of art, with faculty working in photography, painting, drawing, mixed media, printmaking and video."
   }];
 
   return {
