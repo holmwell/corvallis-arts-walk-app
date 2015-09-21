@@ -5,6 +5,7 @@
   The Destinations service returns an array of destination data
 -->
 <ion-view view-title="{{dest.name}}">
+    <ion-nav-title>{{dest.name}}</ion-nav-title>
     <ion-content class="content detail-content">
         <div class="row-dest-feature ng-cloak" ng-if="dest.photoUrl">
           <img class="img-dest-feature" ng-src="{{dest.photoUrl}}"/>
