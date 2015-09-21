@@ -30,9 +30,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DestDetailCtrl', function($scope, $stateParams, $ionicLoading, Destinations) {
-  Destinations.get($stateParams.destinationId, function (dest) {
-    $scope.dest = dest;
-    var destination = $scope.dest;
+  Destinations.get($stateParams.destinationId, function (destination) {
+    $scope.dest = destination;
 
     $scope.mapCreated = function (map) {
       $scope.map = map;

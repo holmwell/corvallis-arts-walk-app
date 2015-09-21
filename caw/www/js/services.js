@@ -92,7 +92,8 @@ angular.module('starter.services', [])
   var promise = $http.get(configUrl);
   var destinations = [];
 
-  promise.success(function (config) { 
+  // TODO: Is this necessary?
+  function processDestinations(config) {
     destinations = config.destinations;
 
     for (var index in destinations) {
@@ -100,13 +101,17 @@ angular.module('starter.services', [])
         destinations[index].photoUrl = config.assetsUrl + destinations[index].photoUrl;
       }
     }
-  });
+
+    return destinations;    
+  }
+
+  promise.success(processDestinations);
 
   return {
     all: function (callback) {
-      promise.success(function () {
+      promise.success(function (config) {
         if (callback) {
-          callback(destinations);
+          callback(processDestinations(config));
         }
       });
     },
@@ -114,8 +119,10 @@ angular.module('starter.services', [])
       destinations.splice(destinations.indexOf(destination), 1);
     },
     get: function(destinationId, callback) {
-      promise.success(function () {
+      promise.success(function (config) {
         if (callback) {
+          var destinations = processDestinations(config);
+
           for (var i = 0; i < destinations.length; i++) {
             if (destinations[i].id.toString() === destinationId) {
               return callback(destinations[i]);
