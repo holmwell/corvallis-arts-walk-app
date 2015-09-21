@@ -1,7 +1,7 @@
 <ion-view view-title="Corvallis Arts Walk">
   <ion-content>
     <ion-list>
-      <ion-item class="item item-remove-animate item-avatar item-icon-right" ng-repeat="dest in destinations" type="item-text-wrap" href="#/tab/destinations/{{dest.id}}">
+      <ion-item class="item item-avatar item-icon-right" ng-repeat="dest in destinations" type="item-text-wrap" href="#/tab/destinations/{{dest.id}}">
         <img ng-src="{{dest.photoUrl || dest.logoUrl || 'img/caw-logo-crow.jpg'}}">
         <h2>{{dest.name}}</h2>
         <h4>{{dest.address}}, {{dest.hours || "4-8 p.m."}}</h4>

@@ -90,10 +90,16 @@ angular.module('starter.services', [])
 
   var configUrl = "https://raw.githubusercontent.com/holmwell/corvallis-arts-walk-assets/master/config.json";
   var promise = $http.get(configUrl);
+  
   var destinations = [];
+  var isProcessed = false;
 
   // TODO: Is this necessary?
   function processDestinations(config) {
+    if (isProcessed) {
+      return destinations;
+    }
+
     destinations = config.destinations;
 
     for (var index in destinations) {
@@ -102,6 +108,7 @@ angular.module('starter.services', [])
       }
     }
 
+    isProcessed = true;
     return destinations;    
   }
 
@@ -114,9 +121,6 @@ angular.module('starter.services', [])
           callback(processDestinations(config));
         }
       });
-    },
-    remove: function (destination) {
-      destinations.splice(destinations.indexOf(destination), 1);
     },
     get: function(destinationId, callback) {
       promise.success(function (config) {

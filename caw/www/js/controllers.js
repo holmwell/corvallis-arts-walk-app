@@ -22,11 +22,6 @@ angular.module('starter.controllers', [])
       return 0;
     });
   });
-
-  $scope.remove = function(dest) {
-    Destinations.remove(dest);
-  };
-
 })
 
 .controller('DestDetailCtrl', function($scope, $stateParams, $ionicLoading, Destinations) {
