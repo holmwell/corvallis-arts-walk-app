@@ -10,16 +10,17 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-
-  $scope.destinations = Destinations.all().sort(function (a, b) {
-    if (a.name > b.name) {
-      return 1;
-    }
-    if (a.name < b.name) {
-      return -1;
-    }
-    // a must be equal to b
-    return 0;
+  Destinations.all(function (destinations) {
+    $scope.destinations = destinations.sort(function (a, b) {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
   });
 
   $scope.remove = function(dest) {
@@ -29,24 +30,26 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DestDetailCtrl', function($scope, $stateParams, $ionicLoading, Destinations) {
-  $scope.dest = Destinations.get($stateParams.destinationId);
-  var destination = $scope.dest;
+  Destinations.get($stateParams.destinationId, function (dest) {
+    $scope.dest = dest;
+    var destination = $scope.dest;
 
-  $scope.mapCreated = function (map) {
-    $scope.map = map;
+    $scope.mapCreated = function (map) {
+      $scope.map = map;
 
-    // Center on the destination's position.
-    var myLatlng = new google.maps.LatLng(
-      destination.geocode.lat,
-      destination.geocode.lng);
+      // Center on the destination's position.
+      var myLatlng = new google.maps.LatLng(
+        destination.geocode.lat,
+        destination.geocode.lng);
 
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map
-    });
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+      });
 
-    map.setCenter(myLatlng);
-  };
+      map.setCenter(myLatlng);
+    };
+  });
 })
 
 .controller('MapCtrl', function ($scope, Destinations, googleMaps, Location) {  
@@ -60,77 +63,78 @@ angular.module('starter.controllers', [])
     $scope.mapCreated = function(map) {
       $scope.map = map;
 
-      var destinations = Destinations.all();
-      var openWindow = undefined;
+      Destinations.all(function (destinations) {
+        var openWindow = undefined;
 
-      for (var id in destinations) {
-        var closure = function () {
-          var dest = destinations[id];
+        for (var id in destinations) {
+          var closure = function () {
+            var dest = destinations[id];
 
-          var position = new google.maps.LatLng(
-            dest.geocode.lat,
-            dest.geocode.lng);
+            var position = new google.maps.LatLng(
+              dest.geocode.lat,
+              dest.geocode.lng);
 
-          // Origins, anchor positions and coordinates of the marker
-          // increase in the X direction to the right and in
-          // the Y direction down.
-          var starImage = {
-            url: 'img/ionic/ios7-star-outline-red-small.png',
-            // This marker is 32 pixels square.
-            size: new google.maps.Size(32, 32),
-            // The origin for this image is 0,0.
-            origin: new google.maps.Point(0,0),
-            // The anchor for this image is the center of the star.
-            anchor: new google.maps.Point(16, 16)
-          };
+            // Origins, anchor positions and coordinates of the marker
+            // increase in the X direction to the right and in
+            // the Y direction down.
+            var starImage = {
+              url: 'img/ionic/ios7-star-outline-red-small.png',
+              // This marker is 32 pixels square.
+              size: new google.maps.Size(32, 32),
+              // The origin for this image is 0,0.
+              origin: new google.maps.Point(0,0),
+              // The anchor for this image is the center of the star.
+              anchor: new google.maps.Point(16, 16)
+            };
 
-          var marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            title: dest.name,
-            icon: starImage
-          });
+            var marker = new google.maps.Marker({
+              position: position,
+              map: map,
+              title: dest.name,
+              icon: starImage
+            });
 
-          var contentString = '<div id="content">'+
-          '<h4 id="firstHeading" class="firstHeading">' + dest.name + '</h4>'+
-          '<div id="bodyContent">'+
-          '<pre>' + dest.summary + '</pre>'+
-          '<p><a href="#/tab/map/destinations/' + dest.id + '">'+
-          'View details</a></p>'+
-          '</div>'+
-          '</div>';
+            var contentString = '<div id="content">'+
+            '<h4 id="firstHeading" class="firstHeading">' + dest.name + '</h4>'+
+            '<div id="bodyContent">'+
+            '<pre>' + dest.summary + '</pre>'+
+            '<p><a href="#/tab/map/destinations/' + dest.id + '">'+
+            'View details</a></p>'+
+            '</div>'+
+            '</div>';
 
-          var infoWindow = new google.maps.InfoWindow({
-            content: contentString
-          });
+            var infoWindow = new google.maps.InfoWindow({
+              content: contentString
+            });
 
-          google.maps.event.addListener(marker, 'click', function() {
-            if (openWindow) {
-              openWindow.close();
-            }
-            infoWindow.open(map,marker);
-            openWindow = infoWindow;
-          });        
-        }(); // closure
-      }
+            google.maps.event.addListener(marker, 'click', function() {
+              if (openWindow) {
+                openWindow.close();
+              }
+              infoWindow.open(map,marker);
+              openWindow = infoWindow;
+            });        
+          }(); // closure
+        }
 
-      styleMap($scope.map);
+        styleMap($scope.map);
 
-      var showLocation = function () {
-        Location.setScope($scope);
-        Location.startShowing($scope.map);
-      };
+        var showLocation = function () {
+          Location.setScope($scope);
+          Location.startShowing($scope.map);
+        };
 
-      showLocation();
+        showLocation();
 
-        // This doesn't fire the first view
-      $scope.$on('$ionicView.enter', showLocation); 
-      
-      $scope.$on('$ionicView.leave', function(){
-        Location.stopShowing();
+          // This doesn't fire the first view
+        $scope.$on('$ionicView.enter', showLocation); 
+        
+        $scope.$on('$ionicView.leave', function(){
+          Location.stopShowing();
+        });
       });
-    }
-  };
+    };
+  }
 
   function styleMap(map) {
 
