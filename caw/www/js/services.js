@@ -88,7 +88,8 @@ angular.module('starter.services', [])
 .factory('Destinations', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
+  var latestBaseUrl = "///2015/09/";
+
   var destinations = [{
     id: 0,
     name: 'The Corvallis Advocate Loft',
@@ -99,7 +100,7 @@ angular.module('starter.services', [])
     },
     summary: "Group show.  Installation and photography from Shar Fagersten, surrealist Cyrus Peery, mathematic art from Jeremy Smith, pop works from Tim Blackburn, metallurgic pieces from Tony Fisher, and more. Treats too.",
     description: "Ranging from an examination of marriage and society to surrealism and pop, this group show brings together many walks of life and, mixed material.  Installation and photography from Shar Fagersten,  surrealist painting and sculpture by Cyrus Peery, mathematic flat pieces and origami from Jeremy Smith, urban pop stencil and spray paint by Tim Blackburn, metallurgic landscape pieces from Tony Fisher, and more. Treats too.",
-    photoUrl: 'img/advocate.jpg'
+    photoUrl: latestBaseUrl + 'advocate.jpg'
   }, {
     id: 1,
     name: 'Art in the Valley',
@@ -120,7 +121,7 @@ angular.module('starter.services', [])
     },
     summary: 'colors made in heaven. Roxanna Hendricks. mixed media works',
     description: "colors made in heaven. Roxanna Hendricks. mixed media works. 541-224-6503, ceiworks.org",
-    photoUrl: 'img/art-works.jpg'
+    photoUrl: latestBaseUrl + 'art-works.jpg'
   }, {
     id: 'azure',
     name: 'Azure Fine Art Gallery',
@@ -130,7 +131,7 @@ angular.module('starter.services', [])
       lng: -123.261053
     },
     summary: 'Join us in September and explore the boundless exploration of the universe with Stacy Spangler\’s collage, where dreams find their way into the waking world.  Then follow us into the ocean depths in Rinee Merritt\’s glass coral in the birdcage.',
-    photoUrl: 'img/azure.jpg'
+    photoUrl: latestBaseUrl + 'azure.jpg'
   }, {
     id: 3,
     name: 'Kaleidoscope Studios',
@@ -141,7 +142,7 @@ angular.module('starter.services', [])
     },
     summary: 'Copper Autumn. Copper is our September focus and our featured jewelry artist is Jeanmarie Denning of Blessing Stones. Her Fall designs incorporate stone & organic elements.',
     description: 'Copper Autumn\n\nWe are ready for Autumn!  For the September Art Walk and beyond, we will highlight warm, earthy copper and jewelry in Autumn organic colors.  Our featured local jewelry artist is Jeanmarie Denning of Blessing Stones. Her Fall designs incorporate stone and organic elements, often complemented with copper or antique brass.\n\nFall favorite snacks, *free* bracelet project and a copper component sale round out the evening!',
-    photoUrl: 'img/kaleidoscope.jpg' 
+    photoUrl: latestBaseUrl + 'kaleidoscope.jpg' 
   }, {
     id: 4,
     name: 'Cyrano\'s',
@@ -161,7 +162,7 @@ angular.module('starter.services', [])
     },
     summary: 'Come see thought-provoking activist art promoting a more compassionate coexistence, browse through older work and Eco-Prints for sale!',
     description: "Come view over a decade of Brittney West's oil paintings and mixed-media drawings as well as view her recent activist artwork, exhibiting thought-provoking imagery intended to create a more compassionate coexistence. Enjoy snacks and wine in her ambient studio, pick at the artist's brain and snoop around. All are welcome!",
-    photoUrl: 'img/brittney-west.jpg'
+    photoUrl: latestBaseUrl + 'brittney-west.jpg'
   }, {
     id: 'pegasus',
     name: 'Pegasus & Old World Deli',
@@ -171,7 +172,7 @@ angular.module('starter.services', [])
       lng: -123.261147
     },
     summary: '\"Safe Places to Fall\" will host paintings of Willamette Valley by artists Margret Hay and William Shumway and several other local image makers.\n\nMixed media pieces by artists Jim Noel, Bill Shumway and Jennifer Bennett will be on display along with metal sculptures by Raymond Hunter',
-    photoUrl: 'img/pegasus.jpg'
+    photoUrl: latestBaseUrl + 'pegasus.jpg'
   },{
     id: 'studio262',
     name: 'Studio262',
@@ -182,7 +183,7 @@ angular.module('starter.services', [])
     },
     summary: 'Jennifer Lommers & Carrie Tasman unveil their new Collaborative Paintings. Artists reception, 4-8pm. Meet the artists and see this exciting new project. ',
     description: "Botanical Abstracts: Collaborative Works by Carrie Tasman & Jennifer Lommers\n\nPlease join us for our artist reception, 4-8pm, where Carrie & Jennifer will unveil their latest project, creating paintings together. Enjoy their attention to color and design as their styles overlap in new and exciting ways.",
-    photoUrl: 'img/studio262.jpg'
+    photoUrl: latestBaseUrl + 'studio262.jpg'
   },{
     id: 'studio-beatrice',
     name: 'Studio Beatrice',
@@ -214,7 +215,7 @@ angular.module('starter.services', [])
     },
     summary: "LOLZ: Instances of Humor in Art, a themed community art show! LOLZ celebrates the relationship of comedy and creativity – highlighting how local artists incorporate humor in visual art.",
     description: "LOLZ: Instances of Humor in Art is the first of a series of themed community art shows slated for the Majestic Theatre in the coming year. Our objective is to celebrate and explore the relationship when comic meets creativity, and highlight the unique viewpoints of our local artists and how they choose to incorporate humor in visual art. Whether it’s exuberant, smile-inducing slapstick comic strips or bold and snarky insults shouted by Shakespeare’s tragic heroes, there’s no question of the importance of the presence of comedy in art throughout the ages, reminding us of the absurdity of sanity and that if all else fails, laughter is the best medicine.",
-    photoUrl: 'img/majestic.jpg'
+    photoUrl: latestBaseUrl + 'majestic.jpg'
   }, {
     id: 'fairbanks',
     name: 'Fairbanks Art Gallery',
@@ -226,6 +227,13 @@ angular.module('starter.services', [])
     },
     summary: "This exhibit has a broad diversity of approaches to the making of art, with faculty working in photography, painting, drawing, mixed media, printmaking and video."
   }];
+
+  var serverUrl = "https://raw.githubusercontent.com/holmwell/corvallis-arts-walk-assets/master/"
+  for (var index in destinations) {
+    if (destinations[index].photoUrl) {
+      destinations[index].photoUrl = destinations[index].photoUrl.replace("///", serverUrl);
+    }
+  }
 
   return {
     all: function() {
